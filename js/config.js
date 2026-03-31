@@ -3,7 +3,7 @@ let respecConfig = {
   useLabel: true,
 
   // TODO: title is verplicht! Neem hieronder de titel van het document op
-  title: "Geonovum template voor ReSpec",
+  title: "MIM - Datatypen",
   //-- specStatus is verplicht! (activeer 1 van de volgende)
   // specStatus: "wv",                 // Werkversie
   //specStatus: "cv",               // Consultatieversie

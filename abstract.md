@@ -1,1 +1,1 @@
-Dit informatiemodel bevat alle primitieve datatypen uit [[MIM12]]
+Dit informatiemodel beschrijft de primitieve datatypen benoemd in [[MIM12]]

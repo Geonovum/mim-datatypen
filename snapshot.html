@@ -101,18 +101,7 @@ body:has(input[name=color-scheme][value=dark]:checked){color-scheme:dark}
 img.license{float:left;padding-right:5px;background:0 0}
 </style>
 <meta name="color-scheme" content="light">
-<style>
-ul.index{columns:30ch;column-gap:1.5em}
-ul.index li{list-style:inherit}
-ul.index li span{color:inherit;cursor:pointer;white-space:normal}
-#index-defined-here ul.index li{font-size:.9rem}
-ul.index code{color:inherit}
-#index-defined-here .print-only{display:none}
-@media print{
-#index-defined-here .print-only{display:initial}
-}
-</style>
-<meta name="description" content="Dit informatiemodel bevat alle primitieve datatypen uit [MIM12]">
+<meta name="description" content="Dit informatiemodel beschrijft de primitieve datatypen benoemd in [MIM12]">
 <style>
 
   .sidelabel {
@@ -1371,14 +1360,14 @@ ul.index code{color:inherit}
 }</script>
 <link rel="stylesheet" href="https://tools.geostandaarden.nl/respec/style/base.css"></head>
 
-<body class="h-entry"><div class="head">
+<body class="h-entry informative"><div class="head">
     <a class="logo" href="https://www.geonovum.nl/geo-standaarden"><img alt="Geonovum" height="67" id="Geonovum" src="https://docs.geostandaarden.nl/media/Geonovum.svg" width="132">
   </a> <h1 id="title" class="title">MIM - Datatypen</h1>
     
     <h2>
       Geonovum Handreiking<br>
       Document
-      <time class="dt-published" datetime="2026-07-02">02 juli 2026</time>
+      <time class="dt-published" datetime="2026-07-06">06 juli 2026</time>
     </h2>
     <dl>
       
@@ -1423,30 +1412,63 @@ ul.index code{color:inherit}
     <hr title="Separator for header">
   </div>
 
-<section id="abstract" class="introductory"><h2>Samenvatting</h2><p>Dit informatiemodel bevat alle primitieve datatypen uit [<cite><a class="bibref" data-link-type="biblio" href="#bib-mim12" title="MIM - Metamodel Informatie Modellering (Versie 1.2)">MIM12</a></cite>]</p>
+<section id="abstract" class="introductory"><h2>Samenvatting</h2><p>Dit informatiemodel beschrijft de primitieve datatypen benoemd in [<cite><a class="bibref" data-link-type="biblio" href="#bib-mim12" title="MIM - Metamodel Informatie Modellering (Versie 1.2)">MIM12</a></cite>]</p>
 </section>
-<section id="sotd" class="introductory"><h2>Status van dit document</h2><p>Dit is een document zonder officiële status.</p></section><nav id="toc"><h2 class="introductory" id="inhoudsopgave">Inhoudsopgave</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Samenvatting</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status van dit document</a></li><li class="tocline"><a class="tocxref" href="#inleiding"><bdi class="secno">1. </bdi>Inleiding</a></li><li class="tocline"><a class="tocxref" href="#toepassingsgebied"><bdi class="secno">2. </bdi>Toepassingsgebied</a></li><li class="tocline"><a class="tocxref" href="#informele-beschrijving"><bdi class="secno">3. </bdi>Informele beschrijving</a></li><li class="tocline"><a class="tocxref" href="#cat"><bdi class="secno">4. </bdi>Gegevensdefinitie</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#EAID_17883B31_A5DA_413b_8BC8_4048AE36E1BD"><bdi class="secno">4.1 </bdi>   MIM datatypen - overzicht</a></li><li class="tocline"><a class="tocxref" href="#primitieve-datatypen"><bdi class="secno">4.2 </bdi>Primitieve datatypen   </a><ol class="toc"><li class="tocline"><a class="tocxref" href="#global_class_MIMdatatypen_Month"><bdi class="secno">4.2.1 </bdi>Primitief datatype   Month</a></li><li class="tocline"><a class="tocxref" href="#global_class_MIMdatatypen_CharacterString"><bdi class="secno">4.2.2 </bdi>Primitief datatype   Character­String</a></li><li class="tocline"><a class="tocxref" href="#global_class_MIMdatatypen_Date"><bdi class="secno">4.2.3 </bdi>Primitief datatype   Date</a></li><li class="tocline"><a class="tocxref" href="#global_class_MIMdatatypen_Measure"><bdi class="secno">4.2.4 </bdi>Primitief datatype   Measure</a></li><li class="tocline"><a class="tocxref" href="#global_class_MIMdatatypen_DateTime"><bdi class="secno">4.2.5 </bdi>Primitief datatype   Date­Time</a></li><li class="tocline"><a class="tocxref" href="#global_class_MIMdatatypen_Integer"><bdi class="secno">4.2.6 </bdi>Primitief datatype   Integer</a></li><li class="tocline"><a class="tocxref" href="#global_class_MIMdatatypen_URI"><bdi class="secno">4.2.7 </bdi>Primitief datatype   URI</a></li><li class="tocline"><a class="tocxref" href="#global_class_MIMdatatypen_Decimal"><bdi class="secno">4.2.8 </bdi>Primitief datatype   Decimal</a></li><li class="tocline"><a class="tocxref" href="#global_class_MIMdatatypen_Boolean"><bdi class="secno">4.2.9 </bdi>Primitief datatype   Boolean</a></li><li class="tocline"><a class="tocxref" href="#global_class_MIMdatatypen_Day"><bdi class="secno">4.2.10 </bdi>Primitief datatype   Day</a></li><li class="tocline"><a class="tocxref" href="#global_class_MIMdatatypen_Year"><bdi class="secno">4.2.11 </bdi>Primitief datatype   Year</a></li><li class="tocline"><a class="tocxref" href="#global_class_MIMdatatypen_UUID"><bdi class="secno">4.2.12 </bdi>Primitief datatype   UUID</a></li><li class="tocline"><a class="tocxref" href="#global_class_MIMdatatypen_Real"><bdi class="secno">4.2.13 </bdi>Primitief datatype   Real</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#conformance"><bdi class="secno">5. </bdi>Conformiteit</a></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">A. </bdi>Referenties</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normatieve-referenties"><bdi class="secno">A.1 </bdi>Normatieve referenties</a></li><li class="tocline"><a class="tocxref" href="#informatieve-referenties"><bdi class="secno">A.2 </bdi>Informatieve referenties</a></li></ol></li></ol></nav>
+<section id="sotd" class="introductory"><h2>Status van dit document</h2><p>Dit is een document zonder officiële status.</p></section><nav id="toc"><h2 class="introductory" id="inhoudsopgave">Inhoudsopgave</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Samenvatting</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status van dit document</a></li><li class="tocline"><a class="tocxref" href="#inleiding"><bdi class="secno">1. </bdi>Inleiding</a></li><li class="tocline"><a class="tocxref" href="#toepassingsgebied"><bdi class="secno">2. </bdi>Toepassingsgebied</a></li><li class="tocline"><a class="tocxref" href="#informele-beschrijving"><bdi class="secno">3. </bdi>Informele beschrijving</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#mim-metamodel-voor-informatiemodellering"><bdi class="secno">3.1 </bdi>MIM - Metamodel voor Informatiemodellering.</a></li></ol></li><li class="tocline"><a class="tocxref" href="#begrippenkader"><bdi class="secno">4. </bdi>Begrippenkader</a></li><li class="tocline"><a class="tocxref" href="#cat"><bdi class="secno">5. </bdi>Gegevensdefinitie</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#EAID_17883B31_A5DA_413b_8BC8_4048AE36E1BD"><bdi class="secno">5.1 </bdi>   MIM datatypen - overzicht</a></li><li class="tocline"><a class="tocxref" href="#primitieve-datatypen"><bdi class="secno">5.2 </bdi>Primitieve datatypen   </a><ol class="toc"><li class="tocline"><a class="tocxref" href="#global_class_MIMdatatypen_Month"><bdi class="secno">5.2.1 </bdi>Primitief datatype   Month</a></li><li class="tocline"><a class="tocxref" href="#global_class_MIMdatatypen_CharacterString"><bdi class="secno">5.2.2 </bdi>Primitief datatype   Character­String</a></li><li class="tocline"><a class="tocxref" href="#global_class_MIMdatatypen_Date"><bdi class="secno">5.2.3 </bdi>Primitief datatype   Date</a></li><li class="tocline"><a class="tocxref" href="#global_class_MIMdatatypen_Measure"><bdi class="secno">5.2.4 </bdi>Primitief datatype   Measure</a></li><li class="tocline"><a class="tocxref" href="#global_class_MIMdatatypen_DateTime"><bdi class="secno">5.2.5 </bdi>Primitief datatype   Date­Time</a></li><li class="tocline"><a class="tocxref" href="#global_class_MIMdatatypen_Integer"><bdi class="secno">5.2.6 </bdi>Primitief datatype   Integer</a></li><li class="tocline"><a class="tocxref" href="#global_class_MIMdatatypen_URI"><bdi class="secno">5.2.7 </bdi>Primitief datatype   URI</a></li><li class="tocline"><a class="tocxref" href="#global_class_MIMdatatypen_Decimal"><bdi class="secno">5.2.8 </bdi>Primitief datatype   Decimal</a></li><li class="tocline"><a class="tocxref" href="#global_class_MIMdatatypen_Boolean"><bdi class="secno">5.2.9 </bdi>Primitief datatype   Boolean</a></li><li class="tocline"><a class="tocxref" href="#global_class_MIMdatatypen_Day"><bdi class="secno">5.2.10 </bdi>Primitief datatype   Day</a></li><li class="tocline"><a class="tocxref" href="#global_class_MIMdatatypen_Year"><bdi class="secno">5.2.11 </bdi>Primitief datatype   Year</a></li><li class="tocline"><a class="tocxref" href="#global_class_MIMdatatypen_UUID"><bdi class="secno">5.2.12 </bdi>Primitief datatype   UUID</a></li><li class="tocline"><a class="tocxref" href="#global_class_MIMdatatypen_Real"><bdi class="secno">5.2.13 </bdi>Primitief datatype   Real</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">A. </bdi>Referenties</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatieve-referenties"><bdi class="secno">A.1 </bdi>Informatieve referenties</a></li></ol></li></ol></nav>
 
 
 <section id="inleiding"><div class="header-wrapper"><h2 id="x1-inleiding"><bdi class="secno">1. </bdi>Inleiding</h2><a class="self-link" href="#inleiding" aria-label="Permalink for Section 1."></a></div>
-<p>Dit informatiemodel bevat alle primitieve datatypen die in informatiemodellen van Geonovum worden gebruikt. Informatiemodellen beschrijven de informatieinhoud en -structuur van domeinen en definieren de semantiek die in domeinen wordt gebruikt. Primitieve datatypen worden gebruikt om waardetypen van attributen te specificeren. Een primitief datatypen is buiten een informatiemodel gespecificeert en wordt alleen gebruikt conform de daarvoor geldende specificaties. Het is primitief omdat het een eenheid is die een verder ondeelbare waarde specificeert. Voor deze primitieve datatypen zijn er in het algemeen internationale standaarden opgesteld.</p>
-<p>In deze standaard wordt een selectie gemaakt voor de door Geonovum gebruikte primitieve datatypen en worden deze gespecificeert naar aspecten die opname in het stelesel van geo-informatiemodellen ondersteund.</p>
-<p>Een groepering van primitieve datatypen is naar onderdelen van de basisstandaarden in het genoemde stelsel:</p>
+<p>Deze handreiking is onderdeel van een serie over primitieve datatypen die in informatiemodellen van Geonovum worden gebruikt. Informatiemodellen beschrijven de informatieinhoud en -structuur van domeinen en definieren de semantiek die in domeinen wordt gebruikt. Primitieve datatypen worden gebruikt om waardetypen van attributen te specificeren. Een primitief datatypen is buiten een informatiemodel gespecificeert en wordt alleen gebruikt conform de daarvoor geldende specificaties. Het is primitief omdat het een eenheid is die een verder ondeelbare waarde specificeert. Voor deze primitieve datatypen zijn er in het algemeen internationale standaarden opgesteld. Voorbeelden zijn 'CharacterString', 'Integer', 'Date', 'GM_Point', 'Boolean'.</p>
+<p>In deze serie handreikingen wordt een selectie gemaakt voor de door Geonovum gebruikte primitieve datatypen en worden deze gespecificeerd naar aspecten die opname in het stelsel van geo-informatiemodellen ondersteund.</p>
+<p>Een groepering van primitieve datatypen is naar onderdelen van de basisstandaarden in het genoemde stelsel. Voor elk van deze is een aparte handreiking opgesteld:</p>
+<blockquote>
+<p>OPMERKING:
+Onderstaande links zijn nu nog naar werkversies</p>
+</blockquote>
 <ul>
-<li><p>Metamodel voor Informatiemodellering (MIM);</p>
+<li><p>MIM - Metamodel voor Informatiemodellering (deze handreiking));</p>
 </li>
-<li><p>Geometrische primitieven conform het geometriemodel van ISO 19107;</p>
+<li><p><a href="https://geonovum.github.io/iso-19107-datatypen/">Geometrische primitieven conform het geometriemodel van ISO 19107</a>;</p>
 </li>
-<li><p>Overige nog primitieven die niet in bovenstaande groepen vallen.</p>
+<li><p><a href="https://geonovum.github.io/geonovum-datatypen/">Geonovum datatypen</a>. Overige primitieven die niet in bovenstaande groepen vallen.</p>
 </li>
 </ul>
-<p>Dit informatiemodel is conform MIM 1.2 weergegeven en bevat een begrippenmodel conform [<cite><a class="bibref" data-link-type="biblio" href="#bib-nl-sbb-20241010" title="NNL-SBB - Standaard voor het beschrijven van begrippen">NL-SBB-20241010</a></cite>].</p>
+<p>Dit informatiemodel is conform MIM 1.2 [<cite><a class="bibref" data-link-type="biblio" href="#bib-mim12" title="MIM - Metamodel Informatie Modellering (Versie 1.2)">MIM12</a></cite>] weergegeven en bevat een begrippenmodel conform [<cite><a class="bibref" data-link-type="biblio" href="#bib-nl-sbb-20241010" title="NNL-SBB - Standaard voor het beschrijven van begrippen">NL-SBB-20241010</a></cite>].</p>
 </section>
 <section id="toepassingsgebied"><div class="header-wrapper"><h2 id="x2-toepassingsgebied"><bdi class="secno">2. </bdi>Toepassingsgebied</h2><a class="self-link" href="#toepassingsgebied" aria-label="Permalink for Section 2."></a></div>
-<p>Deze standaard definieert de standaard datatypen die gebruikt worden in door Geonovum gemaakte informatiemodellen. Deze datatypen worden over het algemeen in andere standaarden gedefineerd maar zijn voor overzicht en volledigheid in deze standaard opgenomen. De datatypen omvatten zogenaamde primitieven. Dit zijn atomaire datatypen die niet verder meer beschreven kunnen worden in termen van andere datatypen. Een gespecificeerd datatype bevat een naam (term) een definitie en optioneel een toelichting. Indien er een samenhang is tussen datatypen, dan is die ook opgenomen.</p>
+<p>Deze serie aan handreikingen over primitieve datatypen definieren of relateren de standaard datatypen die gebruikt worden in door Geonovum gemaakte informatiemodellen. Deze datatypen worden over het algemeen in andere standaarden gedefineerd maar zijn voor overzicht en volledigheid in deze handreiking opgenomen. De datatypen omvatten zogenaamde primitieven. Dit zijn atomaire datatypen die niet verder meer beschreven kunnen worden in termen van andere datatypen. Primitieve datatypen zijn bijna altijd waardetypen. Een gespecificeerd datatype bevat een naam (term) een definitie en optioneel een toelichting. Indien er een samenhang is tussen datatypen, dan is die ook opgenomen.</p>
+<p>Deze handreiking behandelt de primitieve datatypen zoals die in de MIM 1.2  [<cite><a class="bibref" data-link-type="biblio" href="#bib-mim12" title="MIM - Metamodel Informatie Modellering (Versie 1.2)">MIM12</a></cite>] zijn beschreven.</p>
 </section>
 <section id="informele-beschrijving"><div class="header-wrapper"><h2 id="x3-informele-beschrijving"><bdi class="secno">3. </bdi>Informele beschrijving</h2><a class="self-link" href="#informele-beschrijving" aria-label="Permalink for Section 3."></a></div>
-<p>Dit informatiemodel bevat  primitieve datatypen die intern bij Geonovum worden gebruikt.</p>
+<p>Informatiemodellen bevatten voor het specificeren van waardetypen van attributen onder andere referenties naar zogenaamde primitieve datatypen. Voorbeelden hiervan zijn: 'CharacterString', 'Integer', 'Date', 'GM_Point', 'Boolean'.</p>
+<p>Een primitief datatype wordt primitief genoemd omdat het atomair is dat wil zeggen dat het binnen de context van een informatiemodel niet verder opgesplitst kan worden in kleinere datatypes. Deze primitieve datatypen zijn buiten een informatiemodel gespecificeerd. Meestal in internationale standaarden. Implementaties in een digitale omgeving en implementatie formaten maken dan gebruik van deze internationaal geldende specificaties. ISO/IEC 11404 Information technology - General-Purpose-Datatypes (GPD) beschrijft een primitief datatype als een datatype waarvan de waarderuimte is gespecificeerd door een axioma of door een enumeratie.</p>
+<p>Meestal zijn primitieve datatypen enkelvoudig, het kan echter voorkomen dat een primitief datatype een structuur heeft en dus tevens een complex datatype is.</p>
+<p>Primitieve datatype worden meestal alleen gebruikt voor het specificeren van waardetypen.</p>
+<p>Voor Geonovum willen we afpraken maken over het gebruik van primitieve datatypen, welke het zijn, en wat hun definitie is. We doen dit in de vorm van een handreiking omdat we dit relateren aan internationale standaarden. Deze handreikingen plaatsen die datatypen in de context van de informatiemodellering van Geonovum.</p>
+<p>Er wordt een opdeling gemaakt op basis van een aantal onderdelen van het raamwerk van Geostandaarden: de MIM standaard, het ISO 19107 geometrie model en een derde groep 'overig':</p>
+<blockquote>
+<p>OPMERKING:
+Onderstaande links zijn nu nog naar werkversies</p>
+</blockquote>
+<ul>
+<li><p>MIM - Metamodel voor Informatiemodellering (deze handreiking);</p>
+</li>
+<li><p><a href="https://geonovum.github.io/iso-19107-datatypen/">Geometrische primitieven conform het geometriemodel van ISO 19107</a>;</p>
+</li>
+<li><p><a href="https://geonovum.github.io/geonovum-datatypen/">Geonovum datatypen</a>. Overige primitieven die niet in bovenstaande groepen vallen.</p>
+</li>
+</ul>
+<p>In deze handreikingen worden de primitieve datatypen in een MIM 1.2 [<cite><a class="bibref" data-link-type="biblio" href="#bib-mim12" title="MIM - Metamodel Informatie Modellering (Versie 1.2)">MIM12</a></cite>] conform conceptueel informatiemodel gespecificeerd. Tevens wordt er een [<cite><a class="bibref" data-link-type="biblio" href="#bib-nl-sbb-20241010" title="NNL-SBB - Standaard voor het beschrijven van begrippen">NL-SBB-20241010</a></cite>] conform begrippenmodel gepubliceerd.</p>
+<section id="mim-metamodel-voor-informatiemodellering"><div class="header-wrapper"><h3 id="x3-1-mim-metamodel-voor-informatiemodellering"><bdi class="secno">3.1 </bdi>MIM - Metamodel voor Informatiemodellering.</h3><a class="self-link" href="#mim-metamodel-voor-informatiemodellering" aria-label="Permalink for Section 3.1"></a></div>
+<p>MIM - Metamodel voor informatiemodellering [<cite><a class="bibref" data-link-type="biblio" href="#bib-mim12" title="MIM - Metamodel Informatie Modellering (Versie 1.2)">MIM12</a></cite>] beschrijft een metamodel waar informatiemodellen mee gemaakt kunnen worden. Het beschrijft de metaklassen, metastructuur en metagegevens als grondslag voor een informatiemodel. Doel hiervan is standaardiseren van de methode van informatiemodelleren waarmee afstemming tussen informatiemodellen, vergelijkbaarheid in publicatie en gebruik van gemeenschappelijke tooling mogelijk wordt. MIM faciliteert hiermee het ontstaan van een stelsel van samenhangende informatiemodellen.</p>
+<p>MIM benoemt een <a href="https://docs.geostandaarden.nl/mim/mim/#datatype-n">aantal extern gedefinieerde primitieve datatypen</a> om binnen MIM conforme modellen te gebruiken. Deze datatypen zijn allen afkonstig uit andere internationale standaarden. Bij de definities van de datatypen wordt gebruik gemaakt en verwezen naar die standaarden. Voor meer detail wordt ook naar die standaarden verwezen.</p>
+</section></section>
+<section id="begrippenkader"><div class="header-wrapper"><h2 id="x4-begrippenkader"><bdi class="secno">4. </bdi>Begrippenkader</h2><a class="self-link" href="#begrippenkader" aria-label="Permalink for Section 4."></a></div>
+<p>Bij dit informatiemodel is een begrippenkader gedefinieerd en gepubliceerd: <a href="https://staging-definities.geostandaarden.nl/pdm/nl/">MIM 1.2 Primitieve Datatypen</a></p>
+<blockquote>
+<p>OPMERKING:
+Begrippenkader is nu nog op de <a href="https://staging-definities.geostandaarden.nl/nl/">stagingomgeving van de conceptenbibliotheek</a>. </p>
+</blockquote>
 </section>
 
  
@@ -1454,12 +1476,12 @@ ul.index code{color:inherit}
 
 
 
-<section id="cat" class="normative"><div class="header-wrapper"><h2 id="x4-gegevensdefinitie"><bdi class="secno">4. </bdi>Gegevensdefinitie</h2><a class="self-link" href="#cat" aria-label="Permalink for Section 4."></a></div><section id="EAID_17883B31_A5DA_413b_8BC8_4048AE36E1BD"><div class="header-wrapper"><h3 id="x4-1-mim-datatypen-overzicht"><bdi class="secno">4.1 </bdi>   MIM datatypen - overzicht</h3><a class="self-link" href="#EAID_17883B31_A5DA_413b_8BC8_4048AE36E1BD" aria-label="Permalink for Section 4.1"></a></div><div class="imageinfo overview"><figure class="uml-diagram" id="fig-diagram-mim-datatypen"><img id="EAID_17883B31_A5DA_413b_8BC8_4048AE36E1BD" src="data/Images/EAID_17883B31_A5DA_413b_8BC8_4048AE36E1BD.png" usemap="#imagemap-EAID_17883B31_A5DA_413b_8BC8_4048AE36E1BD" alt="Diagram: Overzicht van de primitieve datatypen uit het benoemd in het MIM - Metamodel voor informatiemodellering. Deze datatypen komen voor het merendeel uit ISO 19103:2024 Geographic information - Conceptual schema language, maar kunnen daarin weer doorverwijzen naar andere standaarden."><figcaption><a class="self-link" href="#fig-diagram-mim-datatypen">Figuur <bdi class="figno">1</bdi></a> <span class="fig-title"> ‒ Diagram: MIM datatypen</span></figcaption></figure><map name="imagemap-EAID_17883B31_A5DA_413b_8BC8_4048AE36E1BD"><area shape="rect" alt="UUID" coords="14,331,137,413" href="#global_class_MIMdatatypen_UUID"><area shape="rect" alt="Measure" coords="160,331,283,413" href="#global_class_MIMdatatypen_Measure"><area shape="rect" alt="Year" coords="303,120,426,202" href="#global_class_MIMdatatypen_Year"><area shape="rect" alt="URI" coords="160,226,283,308" href="#global_class_MIMdatatypen_URI"><area shape="rect" alt="Month" coords="443,120,566,202" href="#global_class_MIMdatatypen_Month"><area shape="rect" alt="Integer" coords="160,14,283,96" href="#global_class_MIMdatatypen_Integer"><area shape="rect" alt="Decimal" coords="299,15,422,97" href="#global_class_MIMdatatypen_Decimal"><area shape="rect" alt="Day" coords="586,120,709,202" href="#global_class_MIMdatatypen_Day"><area shape="rect" alt="DateTime" coords="160,119,283,201" href="#global_class_MIMdatatypen_DateTime"><area shape="rect" alt="Date" coords="14,120,137,202" href="#global_class_MIMdatatypen_Date"><area shape="rect" alt="CharacterString" coords="14,14,137,96" href="#global_class_MIMdatatypen_CharacterString"><area shape="rect" alt="Boolean" coords="14,226,137,308" href="#global_class_MIMdatatypen_Boolean"><area shape="rect" alt="Real" coords="443,16,566,98" href="#global_class_MIMdatatypen_Real"></map><p>
+<section id="cat" class="normative"><div class="header-wrapper"><h2 id="x5-gegevensdefinitie"><bdi class="secno">5. </bdi>Gegevensdefinitie</h2><a class="self-link" href="#cat" aria-label="Permalink for Section 5."></a></div><section id="EAID_17883B31_A5DA_413b_8BC8_4048AE36E1BD"><div class="header-wrapper"><h3 id="x5-1-mim-datatypen-overzicht"><bdi class="secno">5.1 </bdi>   MIM datatypen - overzicht</h3><a class="self-link" href="#EAID_17883B31_A5DA_413b_8BC8_4048AE36E1BD" aria-label="Permalink for Section 5.1"></a></div><div class="imageinfo overview"><figure class="uml-diagram" id="fig-diagram-mim-datatypen"><img id="EAID_17883B31_A5DA_413b_8BC8_4048AE36E1BD" src="data/Images/EAID_17883B31_A5DA_413b_8BC8_4048AE36E1BD.png" usemap="#imagemap-EAID_17883B31_A5DA_413b_8BC8_4048AE36E1BD" alt="Diagram: Overzicht van de primitieve datatypen uit het benoemd in het MIM - Metamodel voor informatiemodellering. Deze datatypen komen voor het merendeel uit ISO 19103:2024 Geographic information - Conceptual schema language, maar kunnen daarin weer doorverwijzen naar andere standaarden."><figcaption><a class="self-link" href="#fig-diagram-mim-datatypen">Figuur <bdi class="figno">1</bdi></a> <span class="fig-title"> ‒ Diagram: MIM datatypen</span></figcaption></figure><map name="imagemap-EAID_17883B31_A5DA_413b_8BC8_4048AE36E1BD"><area shape="rect" alt="UUID" coords="14,331,137,413" href="#global_class_MIMdatatypen_UUID"><area shape="rect" alt="Measure" coords="160,331,283,413" href="#global_class_MIMdatatypen_Measure"><area shape="rect" alt="Year" coords="303,120,426,202" href="#global_class_MIMdatatypen_Year"><area shape="rect" alt="URI" coords="160,226,283,308" href="#global_class_MIMdatatypen_URI"><area shape="rect" alt="Month" coords="443,120,566,202" href="#global_class_MIMdatatypen_Month"><area shape="rect" alt="Integer" coords="160,14,283,96" href="#global_class_MIMdatatypen_Integer"><area shape="rect" alt="Decimal" coords="299,15,422,97" href="#global_class_MIMdatatypen_Decimal"><area shape="rect" alt="Day" coords="586,120,709,202" href="#global_class_MIMdatatypen_Day"><area shape="rect" alt="DateTime" coords="160,119,283,201" href="#global_class_MIMdatatypen_DateTime"><area shape="rect" alt="Date" coords="14,120,137,202" href="#global_class_MIMdatatypen_Date"><area shape="rect" alt="CharacterString" coords="14,14,137,96" href="#global_class_MIMdatatypen_CharacterString"><area shape="rect" alt="Boolean" coords="14,226,137,308" href="#global_class_MIMdatatypen_Boolean"><area shape="rect" alt="Real" coords="443,16,566,98" href="#global_class_MIMdatatypen_Real"></map><p>
                         </p><p>Overzicht van de primitieve datatypen uit het benoemd in het MIM - Metamodel voor informatiemodellering.</p>
                         <p></p>
                         <p>Deze datatypen komen voor het merendeel uit ISO 19103:2024 Geographic information - Conceptual schema language, maar kunnen daarin weer doorverwijzen naar andere standaarden.</p>
-                     <p></p></div></section><section id="primitieve-datatypen"><div class="header-wrapper"><h3 id="x4-2-primitieve-datatypen"><bdi class="secno">4.2 </bdi>Primitieve datatypen   </h3><a class="self-link" href="#primitieve-datatypen" aria-label="Permalink for Section 4.2"></a></div>
-            <section id="global_class_MIMdatatypen_Month"><div class="header-wrapper"><h4 id="x4-2-1-primitief-datatype-month"><bdi class="secno">4.2.1 </bdi>Primitief datatype   Month</h4><a class="self-link" href="#global_class_MIMdatatypen_Month" aria-label="Permalink for Section 4.2.1"></a></div>
+                     <p></p></div></section><section id="primitieve-datatypen"><div class="header-wrapper"><h3 id="x5-2-primitieve-datatypen"><bdi class="secno">5.2 </bdi>Primitieve datatypen   </h3><a class="self-link" href="#primitieve-datatypen" aria-label="Permalink for Section 5.2"></a></div>
+            <section id="global_class_MIMdatatypen_Month"><div class="header-wrapper"><h4 id="x5-2-1-primitief-datatype-month"><bdi class="secno">5.2.1 </bdi>Primitief datatype   Month</h4><a class="self-link" href="#global_class_MIMdatatypen_Month" aria-label="Permalink for Section 5.2.1"></a></div>
                <table style="width: 100%;" class="overview OVERVIEW-PRIMITIVEDATATYPE"><colgroup style="width: 30%;"></colgroup><colgroup style="width: 70%;"></colgroup><tbody><tr><th scope="row">Naam</th><td>Month</td></tr><tr><th scope="row">Herkomst</th><td>
                         ISO 19103
                      </td></tr><tr><th scope="row">Definitie</th><td>
@@ -1475,7 +1497,7 @@ ul.index code{color:inherit}
                            
                      </td></tr></tbody></table>
             </section>
-            <section id="global_class_MIMdatatypen_CharacterString"><div class="header-wrapper"><h4 id="x4-2-2-primitief-datatype-character-string"><bdi class="secno">4.2.2 </bdi>Primitief datatype   Character­String</h4><a class="self-link" href="#global_class_MIMdatatypen_CharacterString" aria-label="Permalink for Section 4.2.2"></a></div>
+            <section id="global_class_MIMdatatypen_CharacterString"><div class="header-wrapper"><h4 id="x5-2-2-primitief-datatype-character-string"><bdi class="secno">5.2.2 </bdi>Primitief datatype   Character­String</h4><a class="self-link" href="#global_class_MIMdatatypen_CharacterString" aria-label="Permalink for Section 5.2.2"></a></div>
                <table style="width: 100%;" class="overview OVERVIEW-PRIMITIVEDATATYPE"><colgroup style="width: 30%;"></colgroup><colgroup style="width: 70%;"></colgroup><tbody><tr><th scope="row">Naam</th><td>Character­String</td></tr><tr><th scope="row">Herkomst</th><td>
                         ISO 19103
                      </td></tr><tr><th scope="row">Definitie</th><td>
@@ -1491,7 +1513,7 @@ Opmerking: getallen (ISO Numbers) met voorloopnullen worden opgenomen als Charac
                            
                      </td></tr></tbody></table>
             </section>
-            <section id="global_class_MIMdatatypen_Date"><div class="header-wrapper"><h4 id="x4-2-3-primitief-datatype-date"><bdi class="secno">4.2.3 </bdi>Primitief datatype   Date</h4><a class="self-link" href="#global_class_MIMdatatypen_Date" aria-label="Permalink for Section 4.2.3"></a></div>
+            <section id="global_class_MIMdatatypen_Date"><div class="header-wrapper"><h4 id="x5-2-3-primitief-datatype-date"><bdi class="secno">5.2.3 </bdi>Primitief datatype   Date</h4><a class="self-link" href="#global_class_MIMdatatypen_Date" aria-label="Permalink for Section 5.2.3"></a></div>
                <table style="width: 100%;" class="overview OVERVIEW-PRIMITIVEDATATYPE"><colgroup style="width: 30%;"></colgroup><colgroup style="width: 70%;"></colgroup><tbody><tr><th scope="row">Naam</th><td>Date</td></tr><tr><th scope="row">Herkomst</th><td>
                         ISO 19103
                      </td></tr><tr><th scope="row">Definitie</th><td>
@@ -1507,7 +1529,7 @@ Zie ook ISO/IEC 11404.</p>
                            
                      </td></tr></tbody></table>
             </section>
-            <section id="global_class_MIMdatatypen_Measure"><div class="header-wrapper"><h4 id="x4-2-4-primitief-datatype-measure"><bdi class="secno">4.2.4 </bdi>Primitief datatype   Measure</h4><a class="self-link" href="#global_class_MIMdatatypen_Measure" aria-label="Permalink for Section 4.2.4"></a></div>
+            <section id="global_class_MIMdatatypen_Measure"><div class="header-wrapper"><h4 id="x5-2-4-primitief-datatype-measure"><bdi class="secno">5.2.4 </bdi>Primitief datatype   Measure</h4><a class="self-link" href="#global_class_MIMdatatypen_Measure" aria-label="Permalink for Section 5.2.4"></a></div>
                <table style="width: 100%;" class="overview OVERVIEW-PRIMITIVEDATATYPE"><colgroup style="width: 30%;"></colgroup><colgroup style="width: 70%;"></colgroup><tbody><tr><th scope="row">Naam</th><td>Measure</td></tr><tr><th scope="row">Herkomst</th><td>
                         ISO19103
                      </td></tr><tr><th scope="row">Definitie</th><td>
@@ -1518,7 +1540,7 @@ Zie ook ISO/IEC 11404.</p>
                         ISO 19103
                      </td></tr><tr><th scope="row">Datum opname</th><td> </td></tr></tbody></table>
             </section>
-            <section id="global_class_MIMdatatypen_DateTime"><div class="header-wrapper"><h4 id="x4-2-5-primitief-datatype-date-time"><bdi class="secno">4.2.5 </bdi>Primitief datatype   Date­Time</h4><a class="self-link" href="#global_class_MIMdatatypen_DateTime" aria-label="Permalink for Section 4.2.5"></a></div>
+            <section id="global_class_MIMdatatypen_DateTime"><div class="header-wrapper"><h4 id="x5-2-5-primitief-datatype-date-time"><bdi class="secno">5.2.5 </bdi>Primitief datatype   Date­Time</h4><a class="self-link" href="#global_class_MIMdatatypen_DateTime" aria-label="Permalink for Section 5.2.5"></a></div>
                <table style="width: 100%;" class="overview OVERVIEW-PRIMITIVEDATATYPE"><colgroup style="width: 30%;"></colgroup><colgroup style="width: 70%;"></colgroup><tbody><tr><th scope="row">Naam</th><td>Date­Time</td></tr><tr><th scope="row">Herkomst</th><td>
                         ISO 19103
                      </td></tr><tr><th scope="row">Definitie</th><td>
@@ -1534,7 +1556,7 @@ Zie ook ISO/IEC 11404</p>
                            
                      </td></tr></tbody></table>
             </section>
-            <section id="global_class_MIMdatatypen_Integer"><div class="header-wrapper"><h4 id="x4-2-6-primitief-datatype-integer"><bdi class="secno">4.2.6 </bdi>Primitief datatype   Integer</h4><a class="self-link" href="#global_class_MIMdatatypen_Integer" aria-label="Permalink for Section 4.2.6"></a></div>
+            <section id="global_class_MIMdatatypen_Integer"><div class="header-wrapper"><h4 id="x5-2-6-primitief-datatype-integer"><bdi class="secno">5.2.6 </bdi>Primitief datatype   Integer</h4><a class="self-link" href="#global_class_MIMdatatypen_Integer" aria-label="Permalink for Section 5.2.6"></a></div>
                <table style="width: 100%;" class="overview OVERVIEW-PRIMITIVEDATATYPE"><colgroup style="width: 30%;"></colgroup><colgroup style="width: 70%;"></colgroup><tbody><tr><th scope="row">Naam</th><td>Integer</td></tr><tr><th scope="row">Herkomst</th><td>
                         ISO 19103
                      </td></tr><tr><th scope="row">Definitie</th><td>
@@ -1549,7 +1571,7 @@ Zie ook ISO/IEC 11404</p>
                            
                      </td></tr></tbody></table>
             </section>
-            <section id="global_class_MIMdatatypen_URI"><div class="header-wrapper"><h4 id="x4-2-7-primitief-datatype-uri"><bdi class="secno">4.2.7 </bdi>Primitief datatype   URI</h4><a class="self-link" href="#global_class_MIMdatatypen_URI" aria-label="Permalink for Section 4.2.7"></a></div>
+            <section id="global_class_MIMdatatypen_URI"><div class="header-wrapper"><h4 id="x5-2-7-primitief-datatype-uri"><bdi class="secno">5.2.7 </bdi>Primitief datatype   URI</h4><a class="self-link" href="#global_class_MIMdatatypen_URI" aria-label="Permalink for Section 5.2.7"></a></div>
                <table style="width: 100%;" class="overview OVERVIEW-PRIMITIVEDATATYPE"><colgroup style="width: 30%;"></colgroup><colgroup style="width: 70%;"></colgroup><tbody><tr><th scope="row">Naam</th><td>URI</td></tr><tr><th scope="row">Herkomst</th><td>
                         ISO 19103
                      </td></tr><tr><th scope="row">Definitie</th><td>
@@ -1564,7 +1586,7 @@ Zie ook ISO/IEC 11404</p>
                            
                      </td></tr></tbody></table>
             </section>
-            <section id="global_class_MIMdatatypen_Decimal"><div class="header-wrapper"><h4 id="x4-2-8-primitief-datatype-decimal"><bdi class="secno">4.2.8 </bdi>Primitief datatype   Decimal</h4><a class="self-link" href="#global_class_MIMdatatypen_Decimal" aria-label="Permalink for Section 4.2.8"></a></div>
+            <section id="global_class_MIMdatatypen_Decimal"><div class="header-wrapper"><h4 id="x5-2-8-primitief-datatype-decimal"><bdi class="secno">5.2.8 </bdi>Primitief datatype   Decimal</h4><a class="self-link" href="#global_class_MIMdatatypen_Decimal" aria-label="Permalink for Section 5.2.8"></a></div>
                <table style="width: 100%;" class="overview OVERVIEW-PRIMITIVEDATATYPE"><colgroup style="width: 30%;"></colgroup><colgroup style="width: 70%;"></colgroup><tbody><tr><th scope="row">Naam</th><td>Decimal</td></tr><tr><th scope="row">Herkomst</th><td>
                         ISO 19103
                      </td></tr><tr><th scope="row">Definitie</th><td>
@@ -1582,7 +1604,7 @@ Opmerking 2: t.a.v. positieve en negatieve getalen en + en - tekens: zie Integer
                            
                      </td></tr></tbody></table>
             </section>
-            <section id="global_class_MIMdatatypen_Boolean"><div class="header-wrapper"><h4 id="x4-2-9-primitief-datatype-boolean"><bdi class="secno">4.2.9 </bdi>Primitief datatype   Boolean</h4><a class="self-link" href="#global_class_MIMdatatypen_Boolean" aria-label="Permalink for Section 4.2.9"></a></div>
+            <section id="global_class_MIMdatatypen_Boolean"><div class="header-wrapper"><h4 id="x5-2-9-primitief-datatype-boolean"><bdi class="secno">5.2.9 </bdi>Primitief datatype   Boolean</h4><a class="self-link" href="#global_class_MIMdatatypen_Boolean" aria-label="Permalink for Section 5.2.9"></a></div>
                <table style="width: 100%;" class="overview OVERVIEW-PRIMITIVEDATATYPE"><colgroup style="width: 30%;"></colgroup><colgroup style="width: 70%;"></colgroup><tbody><tr><th scope="row">Naam</th><td>Boolean</td></tr><tr><th scope="row">Herkomst</th><td>
                         ISO 19103
                      </td></tr><tr><th scope="row">Definitie</th><td>
@@ -1597,7 +1619,7 @@ Opmerking 2: t.a.v. positieve en negatieve getalen en + en - tekens: zie Integer
                            
                      </td></tr></tbody></table>
             </section>
-            <section id="global_class_MIMdatatypen_Day"><div class="header-wrapper"><h4 id="x4-2-10-primitief-datatype-day"><bdi class="secno">4.2.10 </bdi>Primitief datatype   Day</h4><a class="self-link" href="#global_class_MIMdatatypen_Day" aria-label="Permalink for Section 4.2.10"></a></div>
+            <section id="global_class_MIMdatatypen_Day"><div class="header-wrapper"><h4 id="x5-2-10-primitief-datatype-day"><bdi class="secno">5.2.10 </bdi>Primitief datatype   Day</h4><a class="self-link" href="#global_class_MIMdatatypen_Day" aria-label="Permalink for Section 5.2.10"></a></div>
                <table style="width: 100%;" class="overview OVERVIEW-PRIMITIVEDATATYPE"><colgroup style="width: 30%;"></colgroup><colgroup style="width: 70%;"></colgroup><tbody><tr><th scope="row">Naam</th><td>Day</td></tr><tr><th scope="row">Herkomst</th><td>
                         ISO 19103
                      </td></tr><tr><th scope="row">Definitie</th><td>
@@ -1612,7 +1634,7 @@ Opmerking 2: t.a.v. positieve en negatieve getalen en + en - tekens: zie Integer
                            
                      </td></tr></tbody></table>
             </section>
-            <section id="global_class_MIMdatatypen_Year"><div class="header-wrapper"><h4 id="x4-2-11-primitief-datatype-year"><bdi class="secno">4.2.11 </bdi>Primitief datatype   Year</h4><a class="self-link" href="#global_class_MIMdatatypen_Year" aria-label="Permalink for Section 4.2.11"></a></div>
+            <section id="global_class_MIMdatatypen_Year"><div class="header-wrapper"><h4 id="x5-2-11-primitief-datatype-year"><bdi class="secno">5.2.11 </bdi>Primitief datatype   Year</h4><a class="self-link" href="#global_class_MIMdatatypen_Year" aria-label="Permalink for Section 5.2.11"></a></div>
                <table style="width: 100%;" class="overview OVERVIEW-PRIMITIVEDATATYPE"><colgroup style="width: 30%;"></colgroup><colgroup style="width: 70%;"></colgroup><tbody><tr><th scope="row">Naam</th><td>Year</td></tr><tr><th scope="row">Herkomst</th><td>
                         ISO 19103
                      </td></tr><tr><th scope="row">Definitie</th><td>
@@ -1628,7 +1650,7 @@ Zie ook ISO/IEC 11404</p>
                            
                      </td></tr></tbody></table>
             </section>
-            <section id="global_class_MIMdatatypen_UUID"><div class="header-wrapper"><h4 id="x4-2-12-primitief-datatype-uuid"><bdi class="secno">4.2.12 </bdi>Primitief datatype   UUID</h4><a class="self-link" href="#global_class_MIMdatatypen_UUID" aria-label="Permalink for Section 4.2.12"></a></div>
+            <section id="global_class_MIMdatatypen_UUID"><div class="header-wrapper"><h4 id="x5-2-12-primitief-datatype-uuid"><bdi class="secno">5.2.12 </bdi>Primitief datatype   UUID</h4><a class="self-link" href="#global_class_MIMdatatypen_UUID" aria-label="Permalink for Section 5.2.12"></a></div>
                <table style="width: 100%;" class="overview OVERVIEW-PRIMITIVEDATATYPE"><colgroup style="width: 30%;"></colgroup><colgroup style="width: 70%;"></colgroup><tbody><tr><th scope="row">Naam</th><td>UUID</td></tr><tr><th scope="row">Herkomst</th><td>
                         ISO 19103
                      </td></tr><tr><th scope="row">Definitie</th><td>
@@ -1643,7 +1665,7 @@ Zie ook ISO/IEC 11404</p>
                            
                      </td></tr></tbody></table>
             </section>
-            <section id="global_class_MIMdatatypen_Real"><div class="header-wrapper"><h4 id="x4-2-13-primitief-datatype-real"><bdi class="secno">4.2.13 </bdi>Primitief datatype   Real</h4><a class="self-link" href="#global_class_MIMdatatypen_Real" aria-label="Permalink for Section 4.2.13"></a></div>
+            <section id="global_class_MIMdatatypen_Real"><div class="header-wrapper"><h4 id="x5-2-13-primitief-datatype-real"><bdi class="secno">5.2.13 </bdi>Primitief datatype   Real</h4><a class="self-link" href="#global_class_MIMdatatypen_Real" aria-label="Permalink for Section 5.2.13"></a></div>
                <table style="width: 100%;" class="overview OVERVIEW-PRIMITIVEDATATYPE"><colgroup style="width: 30%;"></colgroup><colgroup style="width: 70%;"></colgroup><tbody><tr><th scope="row">Naam</th><td>Real</td></tr><tr><th scope="row">Herkomst</th><td>
                         ISO 19103
                      </td></tr><tr><th scope="row">Definitie</th><td>
@@ -1661,36 +1683,19 @@ Zie ook ISO/IEC 11404</p>
          </section></section>
 
 
-<section id="conformance"><div class="header-wrapper"><h2 id="x5-conformiteit"><bdi class="secno">5. </bdi>Conformiteit</h2><a class="self-link" href="#conformance" aria-label="Permalink for Section 5."></a></div><p>Naast onderdelen die als niet-normatief gemarkeerd zijn, zijn ook alle diagrammen, voorbeelden, en noten in dit document niet-normatief. Verder is alles in dit document normatief.</p>
-<section id="tof">
-<section id="index" class="appendix"><div class="header-wrapper"><h4 id="index-0">Index</h4><a class="self-link" href="#index" aria-label="Permalink for this Appendix"></a></div>
 
 
 
 
-<section id="index-defined-here">
-    <div class="header-wrapper"><h5 id="termen-gedefinieerd-door-deze-specificatie">Termen gedefinieerd door deze specificatie</h5><a class="self-link" href="#index-defined-here" aria-label="Permalink for this Appendix"></a></div>
-    <ul class="index">
-    
-  </ul>
-  </section><section id="index-defined-elsewhere">
-    <div class="header-wrapper"><h5 id="termen-gedefinieerd-door-verwijzing">Termen gedefinieerd door verwijzing</h5><a class="self-link" href="#index-defined-elsewhere" aria-label="Permalink for this Appendix"></a></div>
-    <ul class="index">
-    
-  </ul>
-  </section></section><h1>Lijst met figuren</h1><ul class="tof">
-        <li class="tofline">
-    <a class="tocxref" href="#fig-diagram-mim-datatypen"><span class="self-link">Figuur <bdi class="figno">1</bdi></span> <span class="fig-title"> ‒ Diagram: MIM datatypen</span></a>
-  </li>
-      </ul></section></section><section id="references" class="appendix"><div class="header-wrapper"><h2 id="a-referenties"><bdi class="secno">A. </bdi>Referenties</h2><a class="self-link" href="#references" aria-label="Permalink for Appendix A."></a></div><section id="normatieve-referenties">
-    <div class="header-wrapper"><h3 id="a-1-normatieve-referenties"><bdi class="secno">A.1 </bdi>Normatieve referenties</h3><a class="self-link" href="#normatieve-referenties" aria-label="Permalink for Appendix A.1"></a></div>
-    <dl class="bibliography"><dt id="bib-nl-sbb-20241010">[NL-SBB-20241010]</dt><dd>
-      <a href="https://docs.geostandaarden.nl/nl-sbb/def-st-nl-sbb-20241010/"><cite>NNL-SBB - Standaard voor het beschrijven van begrippen</cite></a>.  Geonovum. 2024-10-10. Vastgestelde versie. URL: <a href="https://docs.geostandaarden.nl/nl-sbb/def-st-nl-sbb-20241010/">https://docs.geostandaarden.nl/nl-sbb/def-st-nl-sbb-20241010/</a>
-    </dd></dl>
-  </section><section id="informatieve-referenties">
-    <div class="header-wrapper"><h3 id="a-2-informatieve-referenties"><bdi class="secno">A.2 </bdi>Informatieve referenties</h3><a class="self-link" href="#informatieve-referenties" aria-label="Permalink for Appendix A.2"></a></div>
+
+
+
+<section id="references" class="appendix"><div class="header-wrapper"><h2 id="a-referenties"><bdi class="secno">A. </bdi>Referenties</h2><a class="self-link" href="#references" aria-label="Permalink for Appendix A."></a></div><section id="informatieve-referenties">
+    <div class="header-wrapper"><h3 id="a-1-informatieve-referenties"><bdi class="secno">A.1 </bdi>Informatieve referenties</h3><a class="self-link" href="#informatieve-referenties" aria-label="Permalink for Appendix A.1"></a></div>
     <dl class="bibliography"><dt id="bib-mim12">[MIM12]</dt><dd>
       <a href="https://docs.geostandaarden.nl/mim/def-st-mim-20240613/"><cite>MIM - Metamodel Informatie Modellering (Versie 1.2)</cite></a>.  Geonovum. 2024-06-13. Definitief. URL: <a href="https://docs.geostandaarden.nl/mim/def-st-mim-20240613/">https://docs.geostandaarden.nl/mim/def-st-mim-20240613/</a>
+    </dd><dt id="bib-nl-sbb-20241010">[NL-SBB-20241010]</dt><dd>
+      <a href="https://docs.geostandaarden.nl/nl-sbb/def-st-nl-sbb-20241010/"><cite>NNL-SBB - Standaard voor het beschrijven van begrippen</cite></a>.  Geonovum. 2024-10-10. Vastgestelde versie. URL: <a href="https://docs.geostandaarden.nl/nl-sbb/def-st-nl-sbb-20241010/">https://docs.geostandaarden.nl/nl-sbb/def-st-nl-sbb-20241010/</a>
     </dd></dl>
   </section></section><p role="navigation" id="back-to-top">
     <a href="#title"><abbr title="Terug naar boven">↑</abbr></a>
